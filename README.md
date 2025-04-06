@@ -1,4 +1,4 @@
-# 🎹 Air-Piano: Play Chords with Hand Gestures
+# 🎹 Piano: Play Chords with Hand Gestures
 
 **Air-Piano** is a hands-free virtual MIDI instrument powered by your webcam and computer vision. By detecting finger gestures from both hands, it plays chords from the **D Major scale** in real-time — no physical keyboard required!
 
