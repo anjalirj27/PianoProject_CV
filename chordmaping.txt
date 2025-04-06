@@ -1,0 +1,29 @@
+Chord mapping (D Scale)
+Hand
+Finger
+Chord
+Left
+Thumb
+
+D Major(D,F#,A)
+Left 
+Index
+
+E Minor (E,G,B)
+Left
+Middle
+G Major(G,B,D)
+
+G Major
+Right
+Thumb
+
+A Major(AA,C#,E)
+Right
+Index
+
+B Minor(B,D,F#)
+Right
+Middle
+
+F# Minor (F#, A, C#)
