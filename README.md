@@ -1,20 +1,99 @@
 # 🎹 Air-Piano: Play Chords with Hand Gestures
 
-**Air-Piano** is a virtual MIDI piano that you can play using just your hands and a webcam — no keyboard or mouse needed! It detects your hand gestures in real-time and plays chords from the D scale accordingly. It’s a cool fusion of computer vision and music technology using Python.
----
+**Air-Piano** is a hands-free virtual MIDI instrument powered by your webcam and computer vision. By detecting finger gestures from both hands, it plays chords from the **D Major scale** in real-time — no physical keyboard required!
 
-## ✨ TL;DR
-
-This project uses **computer vision** and **MIDI synthesis** to play D-scale chords based on hand gestures.  
-It leverages:
-- `OpenCV` for video feed
-- `cvzone` (built on `MediaPipe`) for hand tracking
-- `pygame.midi` for MIDI chord output
-
-When you raise specific fingers, the program plays the corresponding chord and **automatically stops it after 2 seconds** — like magic ✨
+> A creative blend of music, machine vision, and MIDI technology — all in Python.
 
 ---
-## 🎯 Features
+
+## ✨ In a Nutshell
+
+This project uses **OpenCV**, **cvzone (MediaPipe)**, and **pygame.midi** to:
+- Detect hand gestures via webcam
+- Map each raised finger to a chord
+- Play the chord for 2 seconds before releasing it
+
+---
+
+## 📆 Project Structure
+
+```plaintext
+PianoProject_CV/
+│
+├── handgesturecvpiano.py        # Original basic version: finger-chord mapping and auto-stop
+├── handgesture.py               # Enhanced version with instrument switching + chord display
+├── chordmaping.txt              # Lists chord mappings for reference
+├── requirements.txt             # All required dependencies
+└── README.md                    # 📘 You’re reading it!
+```
+
+---
+
+## 👍 Chord Mapping (D Major Scale)
+
+Each hand controls different chords. Raising a finger = triggering a chord.
+
+| Hand  | Finger   | Chord     | Notes Played     |
+|-------|----------|-----------|------------------|
+| Left  | Thumb    | D Major   | D, F#, A         |
+| Left  | Index    | E Minor   | E, G, B          |
+| Left  | Middle   | G Major   | G, B, D          |
+| Right | Thumb    | G Major   | G, B, D          |
+| Right | Index    | A Major   | A, C#, E         |
+| Right | Middle   | B Minor   | B, D, F#         |
+| Right | Pinky    | F# Minor  | F#, A, C#        |
+
+> Check full mapping in: `chordmaping.txt`
+
+---
+
+## 🛠️ Setup Instructions
+
+### Step 1️⃣ – Clone the Repository
+
+```bash
+git clone https://github.com/anjalirj27/PianoProject_CV.git
+cd PianoProject_CV
+```
+
+---
+
+### Step 2️⃣ – Install Dependencies
+
+Ensure you are in a Python environment (e.g., `tensorflowenv`). Then install all required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+**Dependencies List (from `requirements.txt`):**
+- `opencv-python`
+- `cvzone`
+- `pygame`
+- `mediapipe`
+- `numpy`
+
+---
+
+### Step 3️⃣ – Run the Program
+
+#### Option 1: Basic Version
+To run the original hand-to-chord logic:
+
+```bash
+python handgesturecvpiano.py
+```
+
+#### Option 2: Enhanced Version 🎮
+To use advanced features like **instrument switching** and **chord visual feedback**:
+
+```bash
+python handgesture.py
+```
+
+---
+
+## 🌟 Features
 
 - 🎥 **Real-Time Hand Tracking** using OpenCV + cvzone
 - 🎹 **MIDI Chord Output** using pygame.midi
@@ -24,28 +103,5 @@ When you raise specific fingers, the program plays the corresponding chord and *
 
 ---
 
-## 🖐️ How Chord Mapping Works
 
-Different fingers on each hand are mapped to different chords from the **D major scale**.
 
-| Hand  | Finger | Chord        | Notes Played     |
-|-------|--------|--------------|------------------|
-| Left  | Thumb  | D Major      | D, F#, A          |
-| Left  | Index  | E Minor      | E, G, B           |
-| Left  | Middle | G Major      | G, B, D           |
-| Right | Thumb  | G Major      | G, B, D           |
-| Right | Index  | A Major      | A, C#, E          |
-| Right | Middle | B Minor      | B, D, F#          |
-| Right | Pinky  | F# Minor     | F#, A, C#         |
-
-You can view these mappings in detail in the `chordmaping.txt` file.
-
----
-
-## 🛠️ How to Set It Up
-
-### 1. Clone or Download the Project
-
-```bash
-git clone https://github.com/yourusername/air-piano.git
-cd air-piano
